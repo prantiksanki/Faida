@@ -2,3 +2,14 @@ hello. this is frontend
 
 hello this is prantik's branch
 
+hii guys
+
+M :- Modified
+A :- Added
+U :- If you create any new file it will show U here
+
+
+
+now push this code to remote repository
+
+only 3 command is used. 
