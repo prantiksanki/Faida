@@ -26,7 +26,8 @@ router.post('/signup', async (req, res) => {
         const newUser = new User({
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword, 
+            id:Date.now() + Math.floor(Math.random() * 1000) // Simple unique ID generation
         });
 
         await newUser.save();
