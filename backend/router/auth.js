@@ -27,12 +27,12 @@ router.post('/signup', async (req, res) => {
             username,
             email,
             password: hashedPassword, 
-            id:Date.now() + Math.floor(Math.random() * 1000) // Simple unique ID generation
+            id:Date.now() + Math.floor(Math.random() * 1000) // Simple uniques ID generation
         });
 
         await newUser.save();
 
-        res.status(201).json({ message: "Signup successful", userId: newUser._id });
+        res.status(201).json({ message: "Signup successful", userId: newUser.id });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Server error", error: err.message });
