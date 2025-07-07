@@ -59,41 +59,41 @@ router.get('/price', async (req, res) => {
 });
 
 
-router.get('/currency', async (req, res) => {
-    const { from, to } = req.query;
+// router.get('/currency', async (req, res) => {
+//     const { from, to } = req.query;
 
-    if (!from || !to) {
-        return res.status(400).json({ error: 'Both "from" and "to" currency codes are required.' });
-    }
+//     if (!from || !to) {
+//         return res.status(400).json({ error: 'Both "from" and "to" currency codes are required.' });
+//     }
 
-    try {
-        const response = await axios.get('https://www.alphavantage.co/query', {
-            params: {
-                function: 'CURRENCY_EXCHANGE_RATE',
-                from_currency: from,
-                to_currency: to,
-                apikey: API_KEY
-            }
-        });
+//     try {
+//         const response = await axios.get('https://www.alphavantage.co/query', {
+//             params: {
+//                 function: 'CURRENCY_EXCHANGE_RATE',
+//                 from_currency: from,
+//                 to_currency: to,
+//                 apikey: API_KEY
+//             }
+//         });
 
-        const data = response.data['Realtime Currency Exchange Rate'];
-        if (!data) {
-            return res.status(404).json({ error: 'Forex data not found.' });
-        }
+//         const data = response.data['Realtime Currency Exchange Rate'];
+//         if (!data) {
+//             return res.status(404).json({ error: 'Forex data not found.' });
+//         }
 
-        res.json({
-            from_currency: data['1. From_Currency Code'],
-            to_currency: data['3. To_Currency Code'],
-            exchange_rate: data['5. Exchange Rate'],
-            last_refreshed: data['6. Last Refreshed'],
-            time_zone: data['7. Time Zone']
-        });
+//         res.json({
+//             from_currency: data['1. From_Currency Code'],
+//             to_currency: data['3. To_Currency Code'],
+//             exchange_rate: data['5. Exchange Rate'],
+//             last_refreshed: data['6. Last Refreshed'],
+//             time_zone: data['7. Time Zone']
+//         });
 
-    } catch (error) {
-        console.error('Error fetching forex data:', error.message);
-        res.status(500).json({ error: 'Internal server error.' });
-    }
-});
+//     } catch (error) {
+//         console.error('Error fetching forex data:', error.message);
+//         res.status(500).json({ error: 'Internal server error.' });
+//     }
+// });
 
 
 
