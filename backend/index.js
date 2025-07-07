@@ -1,11 +1,15 @@
 const express = require('express');
 const app = express();
 const auth = require('./router/auth');
+const stock = require('./router/stock');
 const mongoose = require('mongoose');
 const env = require('dotenv');
 const User = require('./model/user');
 const port = process.env.PORT || 80;
 env.config();
+
+app.use('/stocks', stock);
+
 
 
 mongoose.connect(process.env.MONGO_URL)

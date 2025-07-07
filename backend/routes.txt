@@ -1,0 +1,6 @@
+https://faida.onrender.com/auth/login -> For demo login
+
+https://faida.onrender.com/auth/signup -> For demo signup
+
+https://faida.onrender.com/stocks/price -> For stock price
+
