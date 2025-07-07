@@ -5,6 +5,8 @@ dotenv.config();
 const router = express.Router();
 const API_KEY = process.env.ALPHA_VANTAGE_KEY;
 
+
+
 // Endpoint: GET /stocks/price?ticker=TSLA
 router.get('/price', async (req, res) => {
     const { ticker } = req.query;
@@ -92,6 +94,7 @@ router.get('/currency', async (req, res) => {
         res.status(500).json({ error: 'Internal server error.' });
     }
 });
+
 
 
 module.exports = router;
