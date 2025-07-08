@@ -1,16 +1,50 @@
 const express = require('express');
 const app = express();
-const auth = require('./router/auth');
-const stock = require('./router/stock');
 const mongoose = require('mongoose');
 const env = require('dotenv');
-const User = require('./model/user');
+
 const port = process.env.PORT || 80;
 env.config();
 
+
+
+
+// Importing routes
+
+const auth = require('./router/auth');
+const stock = require('./router/stock');
+const dashboard = require('./router/dashboard');
+
+
+
+
+
+// Importing database models
+
+const User = require('./model/user');
+
+
+
+
+// In build middleware
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+
+
+// middleware for routes
+
+app.use('/auth', auth);
 app.use('/stocks', stock);
+app.use('/dashboard', dashboard);
 
 
+
+
+
+//Database connection
 
 mongoose.connect(process.env.MONGO_URL)
 .then(() => {
@@ -20,10 +54,6 @@ mongoose.connect(process.env.MONGO_URL)
 });
 
 
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use('/auth', auth);
 
 
 
