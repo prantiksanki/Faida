@@ -63,6 +63,11 @@ Signzy, IDfy, or Digio APIs for KYC verification.
 
 Aadhaar/PAN masking and validation via your KYC partner.
 
+
+
+
+
+
 3️⃣ Investment Page
 Backend Routes                  : 
 
@@ -88,6 +93,10 @@ For fixed deposits              :
 
 Use static plans fetched from partnered banks/NBFCs.
 
+
+
+
+
 4️⃣ Portfolio Page
 Backend Routes                  : 
 
@@ -109,6 +118,9 @@ Historical prices               :
 
 Alpha Vantage or Finnhub for price history.
 
+
+
+
 5️⃣ Goal Planning Page
 Backend Routes                  : 
 
@@ -125,6 +137,9 @@ GET /goals/progress
 Data Source                     : 
 
 Handled entirely on your backend using user’s investment and goal data.
+
+
+
 
 6️⃣ Transactions Page
 Backend Routes                  : 
