@@ -1,0 +1,10 @@
+https://faida.onrender.com/auth/login -> For demo login
+
+https://faida.onrender.com/auth/signup -> For demo signup
+
+https://faida.onrender.com/stocks/price?ticker=MSFT -> For stock price
+
+https://faida.onrender.com/stocks/currency?from=USD&to=INR  -> For stock currency conversion
+
+https://faida.onrender.com/dashboard/tips-news  -> For market news
+

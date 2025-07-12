@@ -1,1 +1,1 @@
-## Faida Finance
+## FAIDA FINANCE APP

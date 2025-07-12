@@ -1,0 +1,243 @@
+1️⃣ Home Page / Dashboard
+Backend Routes                  : 
+
+GET /dashboard/summary – returns total invested amount, total balance, recent transactions, portfolio distribution.
+
+GET /dashboard/tips-news – financial tips / news for the carousel.
+
+GET /dashboard/suggestions – curated investor suggestions.
+
+POST /investment/quick – quick “Invest Now” actions.
+
+POST /withdrawal/quick – quick withdrawal actions.
+
+
+Where to get data               : 
+
+Investment & transaction data from your own database.
+
+News from                       : 
+
+NewsAPI (financial category).
+
+Finnhub (financial news).
+
+Tips                            : 
+
+Manual curation.
+
+Use ChatGPT API to generate daily financial tips automatically.
+
+
+
+
+
+
+
+2️⃣ User Profile Page
+Backend Routes                  : 
+
+GET /user/profile
+
+PUT /user/profile
+
+GET /user/kyc-status
+
+POST /user/kyc-submit
+
+GET /user/bank-accounts
+
+PUT /user/notification-settings
+
+PUT /user/preferences (language, theme)
+
+POST /auth/logout
+
+Where to get data               : 
+
+From your users database (MongoDB/Postgres).
+
+For KYC                         : 
+
+Signzy, IDfy, or Digio APIs for KYC verification.
+
+Aadhaar/PAN masking and validation via your KYC partner.
+
+
+
+
+
+
+3️⃣ Investment Page
+Backend Routes                  : 
+
+GET /investment/categories
+
+GET /investment/plans (with filters: risk, return, time)
+
+GET /investment/recommended
+
+POST /investment/calculate
+
+POST /investment/start
+
+Where to get investment data    : 
+
+Plaid Investments API for live investment plans (MF, stocks).
+
+Zerodha Kite Connect API or Upstox API for MF/Stocks.
+
+WazirX API / CoinGecko for crypto.
+
+For fixed deposits              : 
+
+Use static plans fetched from partnered banks/NBFCs.
+
+
+
+
+
+4️⃣ Portfolio Page
+Backend Routes                  : 
+
+GET /portfolio/summary
+
+GET /portfolio/details
+
+GET /portfolio/history (for graphs)
+
+GET /portfolio/download-report
+
+POST /portfolio/redeem
+
+Data source                     : 
+
+Your internal transaction and investment database.
+
+Historical prices               : 
+
+Alpha Vantage or Finnhub for price history.
+
+
+
+
+5️⃣ Goal Planning Page
+Backend Routes                  : 
+
+POST /goals/create
+
+GET /goals/list
+
+PUT /goals/update
+
+DELETE /goals/delete
+
+GET /goals/progress
+
+Data Source                     : 
+
+Handled entirely on your backend using user’s investment and goal data.
+
+
+
+
+6️⃣ Transactions Page
+Backend Routes                  : 
+
+GET /transactions (filters: date/type/status)
+
+GET /transactions/:id
+
+Data Source                     : 
+
+Your transaction database.
+
+7️⃣ Financial Education Page
+Backend Routes                  : 
+
+GET /education/articles
+
+GET /education/videos
+
+GET /education/glossary
+
+GET /education/quizzes
+
+Data Source                     : 
+
+Use                             : 
+
+Your CMS (Strapi, Contentful) for articles/videos.
+
+Manual curation or ChatGPT API for glossary and quizzes.
+
+8️⃣ Notifications Page
+Backend Routes                  : 
+
+GET /notifications
+
+PUT /notifications/mark-read
+
+DELETE /notifications/:id
+
+Data Source                     : 
+
+Use Firebase Cloud Messaging or OneSignal for push notifications.
+
+Store notifications in your database for retrieval.
+
+9️⃣ Help & Support Page
+Backend Routes                  : 
+
+GET /support/faqs
+
+POST /support/ticket
+
+GET /support/ticket/:id
+
+POST /support/chat (connect to live chat).
+
+Data Source                     : 
+
+FAQs can be static or from your CMS.
+
+Ticket system in your backend database.
+
+For live chat                   : 
+
+Use Freshchat, Zendesk, or Dialogflow chatbot.
+
+🔟 Login / Signup Page
+Backend Routes                  : 
+
+POST /auth/signup
+
+POST /auth/login
+
+POST /auth/login-otp
+
+POST /auth/social-login
+
+POST /auth/forgot-password
+
+POST /auth/reset-password
+
+GET /auth/kyc-status
+
+Data Source                     : 
+
+OTP                             : Use Twilio Verify or Msg91 for SMS OTP.
+
+Social login                    : Google/Facebook login integrations.
+
+KYC prompt using your KYC partner APIs.
+
+🔹 External APIs to use         : 
+✅ Plaid API – for investment data, linking user bank accounts.
+✅ Alpha Vantage / Finnhub – for historical investment prices.
+✅ NewsAPI / Finnhub News – for financial news.
+✅ IDfy / Signzy / Digio – for KYC verification.
+✅ CoinGecko / WazirX API – for crypto tracking.
+✅ Twilio / Msg91 – for OTP and notifications.
+✅ Firebase / OneSignal – for push notifications.
+✅ ChatGPT API – for tips generation and chatbot integration.
