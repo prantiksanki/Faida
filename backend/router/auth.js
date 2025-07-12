@@ -65,4 +65,13 @@ try {
 });
 
 
+
+router.post('/user-details' , async(req,res) =>
+{
+    const {pan , aadhaar, bankAccount, passportPhotoUrl, signatureUrl} = req.body;
+    const userId = req.user.userId;
+    
+})
+
+
 module.exports = router;

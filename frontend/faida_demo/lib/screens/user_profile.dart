@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class UserProfilePage extends StatefulWidget {
-  const UserProfilePage({Key? key}) : super(key: key);
+  const UserProfilePage({super.key});
 
   @override
   State<UserProfilePage> createState() => _UserProfilePageState();
@@ -185,7 +185,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
       children: [
         ..._bankAccounts.map((account) => _buildBankAccountTile(account)),
         const SizedBox(height: 12),
-        Container(
+        SizedBox(
           width: double.infinity,
           child: OutlinedButton.icon(
             onPressed: () {

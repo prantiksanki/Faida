@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InvestmentPage extends StatefulWidget {
-  const InvestmentPage({Key? key}) : super(key: key);
+  const InvestmentPage({super.key});
 
   @override
   State<InvestmentPage> createState() => _InvestmentPageState();
@@ -468,7 +468,7 @@ class _InvestmentPageState extends State<InvestmentPage> {
   void _showInvestDialog(Map<String, dynamic> plan) {
     final TextEditingController amountController = TextEditingController();
     final TextEditingController tenureController = TextEditingController();
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
     showDialog(
       context: context,
@@ -480,7 +480,7 @@ class _InvestmentPageState extends State<InvestmentPage> {
               maxWidth: MediaQuery.of(context).size.width * 0.9,
             ),
             child: Form(
-              key: _formKey,
+              key: formKey,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -531,7 +531,7 @@ class _InvestmentPageState extends State<InvestmentPage> {
           ),
           ElevatedButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (formKey.currentState!.validate()) {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
