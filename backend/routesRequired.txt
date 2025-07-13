@@ -3,7 +3,7 @@ Backend Routes                  :
 
 GET /dashboard/summary – returns total invested amount, total balance, recent transactions, portfolio distribution.
 
-GET /dashboard/tips-news – financial tips / news for the carousel.
+GET /dashboard/tips-news – financial tips / news for the carousel. ✅
 
 GET /dashboard/suggestions – curated investor suggestions.
 
@@ -37,7 +37,7 @@ Use ChatGPT API to generate daily financial tips automatically.
 2️⃣ User Profile Page
 Backend Routes                  : 
 
-GET /user/profile
+GET /user/profile 
 
 PUT /user/profile
 
