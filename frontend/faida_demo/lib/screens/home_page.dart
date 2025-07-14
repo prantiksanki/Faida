@@ -111,10 +111,50 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   _buildInvestorSuggestions(),
                   SizedBox(height: 30),
                   _buildChatButton(),
-                  SizedBox(height: 20),
+                  SizedBox(height: 80), // Space for bottom navbar
                 ],
               ),
             ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Color(0xFF4C63D2),
+        elevation: 10,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                icon: Icon(Icons.home, color: Colors.white),
+                tooltip: 'Home',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.trending_up, color: Colors.white),
+                tooltip: 'Investment',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/investment');
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.flag, color: Colors.white),
+                tooltip: 'Goals',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/goals');
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.person, color: Colors.white),
+                tooltip: 'Profile',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+              ),
+            ],
           ),
         ),
       ),

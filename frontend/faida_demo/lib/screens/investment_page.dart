@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InvestmentPage extends StatefulWidget {
-  const InvestmentPage({super.key});
+  const InvestmentPage({Key? key}) : super(key: key);
 
   @override
   State<InvestmentPage> createState() => _InvestmentPageState();
@@ -81,6 +81,42 @@ class _InvestmentPageState extends State<InvestmentPage> {
       'minInvestment': 10000,
       'expectedReturn': '6.5%',
       'risk': 'Low',
+      'time': '3Y',
+    },
+    {
+      'name': 'High Growth Fund',
+      'category': 'Mutual Funds',
+      'rating': 4.7,
+      'minInvestment': 10000,
+      'expectedReturn': '15%',
+      'risk': 'High',
+      'time': '5Y',
+    },
+    {
+      'name': 'Digital Gold',
+      'category': 'Gold Savings',
+      'rating': 4.4,
+      'minInvestment': 1000,
+      'expectedReturn': '9%',
+      'risk': 'Low',
+      'time': '1Y',
+    },
+    {
+      'name': 'Bitcoin Fund',
+      'category': 'Crypto',
+      'rating': 4.6,
+      'minInvestment': 5000,
+      'expectedReturn': '20%',
+      'risk': 'High',
+      'time': '3Y',
+    },
+    {
+      'name': 'Tax Saver Fund',
+      'category': 'Mutual Funds',
+      'rating': 4.2,
+      'minInvestment': 15000,
+      'expectedReturn': '11%',
+      'risk': 'Medium',
       'time': '3Y',
     },
   ];
@@ -468,7 +504,7 @@ class _InvestmentPageState extends State<InvestmentPage> {
   void _showInvestDialog(Map<String, dynamic> plan) {
     final TextEditingController amountController = TextEditingController();
     final TextEditingController tenureController = TextEditingController();
-    final formKey = GlobalKey<FormState>();
+    final _formKey = GlobalKey<FormState>();
 
     showDialog(
       context: context,
@@ -480,7 +516,7 @@ class _InvestmentPageState extends State<InvestmentPage> {
               maxWidth: MediaQuery.of(context).size.width * 0.9,
             ),
             child: Form(
-              key: formKey,
+              key: _formKey,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -531,7 +567,7 @@ class _InvestmentPageState extends State<InvestmentPage> {
           ),
           ElevatedButton(
             onPressed: () {
-              if (formKey.currentState!.validate()) {
+              if (_formKey.currentState!.validate()) {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
