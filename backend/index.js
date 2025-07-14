@@ -14,6 +14,7 @@ env.config();
 const auth = require('./router/auth');
 const stock = require('./router/stock');
 const dashboard = require('./router/dashboard');
+const invest = require('./router/invest');
 
 
 
@@ -39,6 +40,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/auth', auth);
 app.use('/stocks', stock);
 app.use('/dashboard', dashboard);
+app.use('/investment', invest);
+
+
 
 
 

@@ -8,3 +8,10 @@ https://faida.onrender.com/stocks/currency?from=USD&to=INR  -> For stock currenc
 
 https://faida.onrender.com/dashboard/tips-news  -> For market news
 
+https://faida.onrender.com/investment/mf -> For mutual fund investment (GET)
+
+https://faida.onrender.com/investment/mf  -> For mutual fund investment (POST)
+
+
+
+
