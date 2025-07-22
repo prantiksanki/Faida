@@ -13,5 +13,3 @@ https://faida.onrender.com/investment/mf -> For mutual fund investment (GET)
 https://faida.onrender.com/investment/mf  -> For mutual fund investment (POST)
 
 
-
-

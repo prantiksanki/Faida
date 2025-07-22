@@ -15,6 +15,7 @@ const auth = require('./router/auth');
 const stock = require('./router/stock');
 const dashboard = require('./router/dashboard');
 const invest = require('./router/invest');
+const llm = require('./router/llm');
 
 
 
@@ -41,6 +42,7 @@ app.use('/auth', auth);
 app.use('/stocks', stock);
 app.use('/dashboard', dashboard);
 app.use('/investment', invest);
+app.use('/llm', llm);
 
 
 
